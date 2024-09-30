@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图像伪造检测</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #000428, #004e92);
+            background-size: cover;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-top: 0;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            font-size: 1.2em;
+        }
+        input[type="submit"] {
+            font-size: 1.5em;
+            margin-top: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #006494;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #005082;
+        }
+        p {
+            font-size: 1.5em;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>上传图像进行伪造检测</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <br><br>
+        <input type="submit" value="上传并检测">
+    </form>
+</body>
+</html>
